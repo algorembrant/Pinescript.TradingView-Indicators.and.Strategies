@@ -1,51 +1,27 @@
 //@version=5
-indicator("8PM–9PM Candle High & Low (Asia/Manila)", overlay=true, max_lines_count=500)
+indicator("8PM–9PM Candle Coordinate Finder (Asia/Manila)", overlay=true, max_labels_count=500)
 
-// ─────────────────────────────
-// SETTINGS
-// ─────────────────────────────
-timeZone = "Asia/Manila"
+// ─── SETTINGS ───
+tz = "Asia/Manila"
+startHour = 20  // 8:00 PM
+endHour   = 21  // 9:00 PM
 
-// Get the current bar's hour and minute in Manila timezone
-barHour   = hour(time, timeZone)
-barMinute = minute(time, timeZone)
+// ─── DETECT CANDLES IN THE 8PM–9PM RANGE ───
+t = timenow
+bar_time = time(timeframe.period, tz)
+bar_hour = hour(time, tz)
 
-// ─────────────────────────────
-// DETECT 8PM–9PM CANDLE RANGE
-// ─────────────────────────────
+isInRange = bar_hour >= startHour and bar_hour < endHour
 
-// Start when hour == 20 (8PM)
-isSession = (barHour == 20)
+// ─── WHEN A CANDLE FALLS IN THE RANGE ───
+if isInRange
+    var color c = color.new(color.yellow, 0)
+    // Draw box for the 8PM–9PM candle
+    box.new(left=bar_index, top=high, right=bar_index + 1, bottom=low, border_color=color.new(color.yellow, 0),bgcolor=color.new(color.yellow, 90) )
 
-// Reset at 9PM
-isReset = (barHour == 21 and barMinute == 0)
+    // Label with coordinates
+    label.new( bar_index, high, str.format("x: {0}\ny: {1}", str.tostring(bar_index), str.tostring(high)), style=label.style_label_down,  color=color.new(c, 0), textcolor=color.black, size=size.small)
 
-// Persistent variables to store the range
-var float sessionHigh = na
-var float sessionLow  = na
-
-if isSession
-    sessionHigh := na(sessionHigh) ? high : math.max(sessionHigh, high)
-    sessionLow  := na(sessionLow)  ? low  : math.min(sessionLow, low)
-else if isReset
-    sessionHigh := na
-    sessionLow := na
-
-// ─────────────────────────────
-// DRAW LINES FOR THE 8PM–9PM RANGE
-// ─────────────────────────────
-var line hiLine = na
-var line loLine = na
-
-if barstate.islast and not na(sessionHigh) and not na(sessionLow)
-    line.delete(hiLine)
-    line.delete(loLine)
-    hiLine := line.new(bar_index - 1, sessionHigh, bar_index + 10, sessionHigh, extend=extend.right, color=color.new(color.green, 0), style=line.style_dotted)
-    loLine := line.new(bar_index - 1, sessionLow, bar_index + 10, sessionLow, extend=extend.right, color=color.new(color.red, 0), style=line.style_dotted)
-
-// ─────────────────────────────
-// LABELS
-// ─────────────────────────────
-if barstate.islast and not na(sessionHigh) and not na(sessionLow)
-    label.new(bar_index + 2, sessionHigh, "8PM High", style=label.style_label_down, color=color.new(color.green, 70))
-    label.new(bar_index + 2, sessionLow, "8PM Low", style=label.style_label_up, color=color.new(color.red, 70))
+// ─── OPTIONAL: SHOW SESSION LINE ───
+if (bar_hour == startHour) and (minute(time, tz) == 0)
+    line.new(bar_index, high, bar_index, low, color=color.new(color.orange, 0), style=line.style_dotted)
