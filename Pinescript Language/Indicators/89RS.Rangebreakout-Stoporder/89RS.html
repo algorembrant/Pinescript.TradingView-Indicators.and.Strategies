@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XAUUSD Range Breakout Setup</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+    }
+    h1, h2 {
+        text-align: center;
+        color: #222;
+    }
+    h2 {
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        border-radius: 10px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+    }
+    th, td {
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+    code {
+        background-color: #eef;
+        padding: 2px 6px;
+        border-radius: 4px;
+    }
+    .diagram {
+        text-align: center;
+        font-family: monospace;
+        white-space: pre;
+        background-color: #f0f0f0;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 20px 0;
+    }
+    .green { color: green; font-weight: bold; }
+    .orange { color: orange; font-weight: bold; }
+    .red { color: red; font-weight: bold; }
+    ul {
+        margin: 20px 0;
+        padding-left: 20px;
+    }
+    li {
+        margin-bottom: 10px;
+    }
+    img {
+        display: block;
+        margin: 20px auto;
+        max-width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>About</h1>
+    <table>
+        <tr>
+            <th>Property</th>
+            <th>Details</th>
+        </tr>
+        <tr>
+            <td><b>Ticker/Instrument</b></td>
+            <td>XAUUSD</td>
+        </tr>
+        <tr>
+            <td><b>Broker</b></td>
+            <td>OANDA (TradingView only)</td>
+        </tr>
+        <tr>
+            <td><b>Timeframe</b></td>
+            <td>Non-specific</td>
+        </tr>
+        <tr>
+            <td><b>Timezone</b></td>
+            <td>Asia/Manila (UTC+8)</td>
+        </tr>
+        <tr>
+            <td><b>Session</b></td>
+            <td>New York (customed 1h)</td>
+        </tr>
+        <tr>
+            <td><b>Method</b></td>
+            <td>Range Breakout</td>
+        </tr>
+    </table>
+
+    <h1>Details</h1>
+    <p>Locate the x-y coordinate of candles formed from 8pm to 9pm (Asia/Manila timezone). Find the highest and lowest points to create a range rectangle:</p>
+
+    <div class="diagram">
+    ┌────────────── <span class="green">sessionHigh</span><br>
+    │<br>
+    │   ████  ← 8PM–9PM candles<br>
+    │<br>
+    └────────────── <span class="red">sessionLow</span>
+    </div>
+
+    <p>Mark the high, low, and midpoint of the range:</p>
+
+    <div class="diagram">
+    ┌────────────── <span class="green">HIGH</span><br>
+    │   ████<br>
+    │   ████<br>
+     ────────────── <span class="orange">MID</span><br>
+    │   ████<br>
+    │   ████<br>
+    └────────────── <span class="red">LOW</span>
+    </div>
+
+    <p>The high is used as the <b>Buy Stop</b>. TP is calculated as: <code>TP = High + 2 × (High − Mid)</code>.  
+    The low is used as the <b>Sell Stop</b> with mirrored logic. The midpoint serves as SL for both orders.</p>
+
+    <div class="diagram">
+    ─────────────── TP<br>
+    <br>
+    ┌─────────────► <b>buystop</b><br>
+    │    ████    │<br>
+    │    ████    │<br>
+     ────────────── SL<br>
+    │    ████    │<br>
+    │    ████    │<br>
+    └─────────────► <b>sellstop</b><br>
+    <br>
+    ─────────────── TP
+    </div>
+
+    <h1>Sample Framework</h1>
+    <p>Regardless of the colors, the output is well presented from the input:</p>
+    <img src="https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Pinescript%20Language/Indicators/89RS.Rangebreakout-Stoporder/XAUUSD_2025-11-11_21-11-52.png?raw=true" alt="XAUUSD Chart">
+
+    <h1>Breakdown</h1>
+    <ul>
+        <li><b>8pm to 9pm Range</b> – Define the price range during this hour.</li>
+        <li><b>Buy Stop</b> – Place at the <b>high</b> of the range.  
+            <ul>
+                <li><b>SL:</b> Midpoint of the range</li>
+                <li><b>TP:</b> High + 2×R</li>
+            </ul>
+        </li>
+        <li><b>Sell Stop</b> – Place at the <b>low</b> of the range.  
+            <ul>
+                <li><b>SL:</b> Midpoint of the range</li>
+                <li><b>TP:</b> Low − 2×R</li>
+            </ul>
+        </li>
+        <li>Maximum of <b>2 orders</b> may trigger per setup.</li>
+        <li>Maximum of <b>4 outcomes</b>: two losses and two wins.</li>
+        <li>Setup is valid until <b>4am</b>.</li>
+    </ul>
+</div>
+
+</body>
+</html>
