@@ -1,51 +1,91 @@
 //@version=5
-indicator("8PM–9PM Session Range Box (Asia/Manila)", overlay=true, max_boxes_count=500, max_lines_count=500)
+indicator("8PM–9PM Range Strategy (Midpoint as SL)", overlay=true, max_lines_count=500, max_labels_count=500, max_boxes_count=200)
 
 //──────────────────────────────
 // SETTINGS
 //──────────────────────────────
 tz = "Asia/Manila"
-startHour = 20  // 8:00 PM
-endHour   = 21  // 9:00 PM
+startHour = 20
+endHour   = 21
 
 //──────────────────────────────
-// DETECT 8–9PM SESSION
+// TIME DETECTION
 //──────────────────────────────
-barTime  = time(timeframe.period, tz)
-barHour  = hour(time, tz)
-barMin   = minute(time, tz)
-
-inSession = barHour >= startHour and barHour < endHour
-sessionStart = barHour == startHour and barMin == 0
-sessionEnd   = barHour == endHour and barMin == 0
+barHour = hour(time, tz)
+barMin  = minute(time, tz)
+inSession    = barHour >= startHour and barHour < endHour
+sessionOpen  = barHour == startHour and barMin == 0
+sessionClose = barHour == endHour and barMin == 0
 
 //──────────────────────────────
-// TRACK HIGHS/LOWS DURING SESSION
+// TRACK RANGE DURING SESSION
 //──────────────────────────────
-var float sessionHigh = na
-var float sessionLow  = na
-var int   sessionStartIndex = na
-var int   sessionEndIndex   = na
-var box   sessionBox = na
+var float sHigh = na
+var float sLow  = na
+var int   sStart = na
+var int   sEnd   = na
+var box   sBox = na
 
-if sessionStart
-    sessionHigh := high
-    sessionLow  := low
-    sessionStartIndex := bar_index
-    sessionEndIndex := na
+if sessionOpen
+    sHigh := high
+    sLow  := low
+    sStart := bar_index
+    sEnd := na
 
 if inSession
-    sessionHigh := math.max(sessionHigh, high)
-    sessionLow  := math.min(sessionLow, low)
+    sHigh := math.max(sHigh, high)
+    sLow  := math.min(sLow, low)
 
-if sessionEnd and not na(sessionHigh)
-    sessionEndIndex := bar_index
-    
-    // Draw rectangle (box)
-    if not na(sessionBox)
-        box.delete(sessionBox)
-    sessionBox := box.new( left = sessionStartIndex, right = sessionEndIndex, top = sessionHigh, bottom = sessionLow, bgcolor = color.new(color.yellow, 80),border_color = color.new(color.yellow, 0))
+if sessionClose and not na(sHigh)
+    sEnd := bar_index
 
-    // Draw vertical lines for visual clarity
-    line.new(sessionStartIndex, sessionHigh, sessionStartIndex, sessionLow, color=color.new(color.yellow, 0))
-    line.new(sessionEndIndex, sessionHigh, sessionEndIndex, sessionLow, color=color.new(color.yellow, 0))
+    //──────────────────────────────
+    // RANGE BOX
+    //──────────────────────────────
+    if not na(sBox)
+        box.delete(sBox)
+    sBox := box.new( left = sStart, right = sEnd, top = sHigh,  bottom = sLow, bgcolor = color.new(color.yellow, 85), border_color = color.new(color.yellow, 0))
+
+    //──────────────────────────────
+    // CORE LEVELS
+    //──────────────────────────────
+    mid = (sHigh + sLow) / 2
+
+    // BUY setup
+    buyStop = sHigh
+    buySL   = mid
+    buyTP   = sHigh + (math.abs(sHigh - mid) * 2)
+
+    // SELL setup (mirror)
+    sellStop = sLow
+    sellSL   = mid  // same midpoint as SL
+    sellTP   = sLow - (math.abs(mid - sLow) * 2)
+
+    //──────────────────────────────
+    // DRAW RANGE LINES
+    //──────────────────────────────
+    line.new(sStart, sHigh, sEnd, sHigh, color=color.new(color.green, 0), style=line.style_dotted)
+    line.new(sStart, sLow, sEnd, sLow, color=color.new(color.red, 0), style=line.style_dotted)
+    line.new(sStart, mid, sEnd, mid, color=color.new(color.orange, 0), style=line.style_dotted)
+
+    //──────────────────────────────
+    // DRAW BUY SETUP
+    //──────────────────────────────
+    line.new(sEnd, buyStop, sEnd + 5, buyStop, color=color.new(color.lime, 0), width=2)
+    line.new(sEnd, buySL, sEnd + 5, buySL, color=color.new(color.orange, 0), width=2, style=line.style_dashed)
+    line.new(sEnd, buyTP, sEnd + 5, buyTP, color=color.new(color.lime, 0), width=2, style=line.style_dotted)
+
+    label.new(sEnd + 5, buyStop, text=str.format("BUY STOP\n{0}", str.tostring(buyStop, format.mintick)), style=label.style_label_left, color=color.new(color.lime, 0), textcolor=color.white)
+    label.new(sEnd + 5, buySL, text=str.format("SL (MID)\n{0}", str.tostring(buySL, format.mintick)), style=label.style_label_left, color=color.new(color.orange, 0), textcolor=color.white)
+    label.new(sEnd + 5, buyTP, text=str.format("BUY TP\n{0}", str.tostring(buyTP, format.mintick)),style=label.style_label_left, color=color.new(color.lime, 0), textcolor=color.white)
+
+    //──────────────────────────────
+    // DRAW SELL SETUP
+    //──────────────────────────────
+    line.new(sEnd, sellStop, sEnd + 5, sellStop, color=color.new(color.red, 0), width=2)
+    line.new(sEnd, sellSL, sEnd + 5, sellSL, color=color.new(color.orange, 0), width=2, style=line.style_dashed)
+    line.new(sEnd, sellTP, sEnd + 5, sellTP, color=color.new(color.red, 0), width=2, style=line.style_dotted)
+
+    label.new(sEnd + 5, sellStop, text=str.format("SELL STOP\n{0}", str.tostring(sellStop, format.mintick)),style=label.style_label_left, color=color.new(color.red, 0), textcolor=color.white)
+    label.new(sEnd + 5, sellSL, text=str.format("SL (MID)\n{0}", str.tostring(sellSL, format.mintick)), style=label.style_label_left, color=color.new(color.orange, 0), textcolor=color.white)
+    label.new(sEnd + 5, sellTP, text=str.format("SELL TP\n{0}", str.tostring(sellTP, format.mintick)),style=label.style_label_left, color=color.new(color.red, 0), textcolor=color.white)
