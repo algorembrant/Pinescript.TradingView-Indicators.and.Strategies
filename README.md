@@ -5,7 +5,7 @@ Why? GitHub doesn't support Pinescript (a language for making trading indicators
 
 
 # Indicator Lists
-1. [89RS Range breakout Stoporder 1:2RR ratio target](./Pinescript%20Language/Indicators/89RS.Rangebreakout-Stoporder)
+1. [89RS](./Pinescript%20Language/Indicators/89RS.Rangebreakout-Stoporder)  8-9pm Rangebreakout Stoporder 1:2RR ratio target
 
 
 # Strategy Lists
