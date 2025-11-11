@@ -1,27 +1,51 @@
 //@version=5
-indicator("8PM–9PM Candle Coordinate Finder (Asia/Manila)", overlay=true, max_labels_count=500)
+indicator("8PM–9PM Session Range Box (Asia/Manila)", overlay=true, max_boxes_count=500, max_lines_count=500)
 
-// ─── SETTINGS ───
+//──────────────────────────────
+// SETTINGS
+//──────────────────────────────
 tz = "Asia/Manila"
 startHour = 20  // 8:00 PM
 endHour   = 21  // 9:00 PM
 
-// ─── DETECT CANDLES IN THE 8PM–9PM RANGE ───
-t = timenow
-bar_time = time(timeframe.period, tz)
-bar_hour = hour(time, tz)
+//──────────────────────────────
+// DETECT 8–9PM SESSION
+//──────────────────────────────
+barTime  = time(timeframe.period, tz)
+barHour  = hour(time, tz)
+barMin   = minute(time, tz)
 
-isInRange = bar_hour >= startHour and bar_hour < endHour
+inSession = barHour >= startHour and barHour < endHour
+sessionStart = barHour == startHour and barMin == 0
+sessionEnd   = barHour == endHour and barMin == 0
 
-// ─── WHEN A CANDLE FALLS IN THE RANGE ───
-if isInRange
-    var color c = color.new(color.yellow, 0)
-    // Draw box for the 8PM–9PM candle
-    box.new(left=bar_index, top=high, right=bar_index + 1, bottom=low, border_color=color.new(color.yellow, 0),bgcolor=color.new(color.yellow, 90) )
+//──────────────────────────────
+// TRACK HIGHS/LOWS DURING SESSION
+//──────────────────────────────
+var float sessionHigh = na
+var float sessionLow  = na
+var int   sessionStartIndex = na
+var int   sessionEndIndex   = na
+var box   sessionBox = na
 
-    // Label with coordinates
-    label.new( bar_index, high, str.format("x: {0}\ny: {1}", str.tostring(bar_index), str.tostring(high)), style=label.style_label_down,  color=color.new(c, 0), textcolor=color.black, size=size.small)
+if sessionStart
+    sessionHigh := high
+    sessionLow  := low
+    sessionStartIndex := bar_index
+    sessionEndIndex := na
 
-// ─── OPTIONAL: SHOW SESSION LINE ───
-if (bar_hour == startHour) and (minute(time, tz) == 0)
-    line.new(bar_index, high, bar_index, low, color=color.new(color.orange, 0), style=line.style_dotted)
+if inSession
+    sessionHigh := math.max(sessionHigh, high)
+    sessionLow  := math.min(sessionLow, low)
+
+if sessionEnd and not na(sessionHigh)
+    sessionEndIndex := bar_index
+    
+    // Draw rectangle (box)
+    if not na(sessionBox)
+        box.delete(sessionBox)
+    sessionBox := box.new( left = sessionStartIndex, right = sessionEndIndex, top = sessionHigh, bottom = sessionLow, bgcolor = color.new(color.yellow, 80),border_color = color.new(color.yellow, 0))
+
+    // Draw vertical lines for visual clarity
+    line.new(sessionStartIndex, sessionHigh, sessionStartIndex, sessionLow, color=color.new(color.yellow, 0))
+    line.new(sessionEndIndex, sessionHigh, sessionEndIndex, sessionLow, color=color.new(color.yellow, 0))
