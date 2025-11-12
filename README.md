@@ -28,7 +28,7 @@ The indicators & strategies (pinescript) at TradingView is limited, it doesn't a
 not updated yet
 | CODE             | Details                                    | Status    |
 |---------------------|-------------------------------------------|-----------------|
-| **[89RS-stra](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/Pinescript_Language/Strategies/89RS-stra._Automated_Trading)** |Automated strategy trading bot for 89RS |  Ongoing |
+| **[89RS-stra](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/tree/main/Pinescript%20Language/Strategies)** |Automated strategy trading bot for 89RS |  Ongoing |
 
 
 # Technique Lists
