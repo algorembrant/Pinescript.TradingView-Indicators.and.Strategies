@@ -4,7 +4,7 @@ Files are named with a **`.js`** extension purely for aesthetics. This **does no
 
 ## Why?
 
-GitHub doesn’t support Pine Script, the language for TradingView indicators and strategies. Using `.js` allows GitHub to recognize a language for repository stats. Syntax highlighting is available via VS Code packages, but the code **only works when pasted into TradingView’s Pine Editor**.
+GitHub doesn’t support Pine Script, the language for TradingView indicators and strategies. Using `.js` allows GitHub to recognize a language for repository stats. Syntax highlighting is available via VS Code packages, but the code **only works when pasted into TradingView’s Pine Editor Compiler**.
 
 
 ## How to use the code
@@ -23,21 +23,21 @@ The bot trades **without human interaction**—no chart watching, no emotions, j
 
 ---
 
-# Indicator Lists
+## Indicator Lists
 
 | CODE | Info | Status | Details |
 |------|------|--------|---------|
 | **[89RS-indi](./Pinescript%20Language/Indicators/89RS.Rangebreakout-Stoporder)** | The 8-9pm Rangebreakout Stoporder Method with 1:2RR ratio target. An Opening Range Break (ORB) reference. | Ongoing | **[readme](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Pinescript%20Language/Indicators/89RS.Rangebreakout-Stoporder/89RS-indi.notice.md)** |
 
 
-# Strategy Lists
+## Strategy Lists
 
 | CODE | Info | Status | Details |
 |------|------|--------|---------|
 | **[89RS-stra](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/tree/main/Pinescript%20Language/Strategies)** | Automated strategy trading bot for 89RS | Ongoing | **[readme](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Pinescript%20Language/Strategies/89RS-stra.%20Automated%20Trading/89RS-stra.notice.%20Automated%20strategy.md)** |  
 
 
-# Technique Lists
+## Technique Lists
 
 | CODE | Info | Status | Details |
 |------|------|--------|---------|
