@@ -1,22 +1,44 @@
-Now that we successfully made the framework of the setup to trade, we will clarify conditions to meet for the pinescript trading strategy.
+# 8PM–9PM Range Breakout Trading Strategy (Pine Script)
 
-0.  Use asianmanila timezone, UTC+8.
-1.  Identify the 8pm to 9pm range.
-2.  The processing candles outside the range will become leading factor for trading decision.
-3.  The developing price (with wick data) must revisit the mid-price of the range before proceeding to the next condition.
-4.  If it visits the mid-price, then make a buystop at the high-price and sellstop at the low-price of the range.
-5.  TP price with a target of 2R-multiple.
-6.  SL price is at the mid-price for both buystop and sellstop.
-7.  The strategy may trigger both buystop and sellstop at the same one setup but the condition is valid until the 4am candle.
-8.  Thats how an intraday trading will be finish, maximum of 2 losses or 2 wins or mix or both for range setup.
-9.  If the trade is running, and doesn't hit any posible outcome, then take out the order if the price hits 4am.
-The starting capital is $2000.
-The risk% (of updated capital) is 3% pertrade (3% for buystop and 3% for sell stop).
+**Setup Overview:**  
+This framework defines the conditions for executing the trading strategy.
 
-Use the y-coordinates from my indicator to find range, entries, sl, and tp targets.
+---
 
-![image](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/Pinescript Language/Strategies/images/Screenshot 2025-11-12 201257.png)
+## Rules
 
-| About Flaws            | Details                                    | Status
+1. Use **Asia/Manila timezone (UTC+8)**.  
+2. Identify the **8 PM – 9 PM price range**.  
+3. Candles outside this range will guide trading decisions.  
+4. The developing price (including wicks) **must revisit the mid-price** of the range before proceeding.  
+5. Once the mid-price is revisited:  
+   - Place a **Buy Stop** at the range **high**.  
+   - Place a **Sell Stop** at the range **low**.  
+6. **Take Profit (TP):** 2R multiple from the entry.  
+7. **Stop Loss (SL):** mid-price for both Buy Stop and Sell Stop.  
+8. Both Buy Stop and Sell Stop **may trigger** in the same setup, valid until the **4 AM candle**.  
+9. Maximum outcomes per setup: **2 wins, 2 losses, or a mix**.  
+10. If the trade hasn’t hit any target by 4 AM, **cancel the orders**.  
+
+---
+
+## Risk Management
+
+- Starting capital: **$2,000**  
+- Risk per trade: **3% of current capital** (applies separately to Buy Stop and Sell Stop).  
+
+---
+
+## Implementation Note
+
+Use the **y-coordinates from the indicator** to calculate the range, entries, SL, and TP targets.
+
+
+![image](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Pinescript%20Language/Strategies/images/Screenshot%202025-11-12%20201257.png)
+
+## Test 1: Notice 
+| Topic&Flaws            | Details                                    | Status  |
 |---------------------|-------------------------------------------|-------------|
-| **Position sizing** | i think the bot doesn't position size condifering the P&L gains. For example: it bets 3% but not as the whole SL, hence the loss is greater than -3% and the gain is greater than 6% | unfixed |
+| **Position sizing** | i think the bot doesn't position size condifering the P&L gains. For example: it bets 3% but not as the whole SL, hence the loss is greater than -3% and the gain is greater than 6% | unresolved |
+ |**R-multiple** | its appears that its possible to get 4R-multiple upon reviwing the trades| unresolved |
+ |**winrate** | the winrate is 40-43% and its not that idieal|unresolved |
