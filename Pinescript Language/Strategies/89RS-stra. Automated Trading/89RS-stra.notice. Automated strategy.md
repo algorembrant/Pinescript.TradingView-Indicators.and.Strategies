@@ -46,8 +46,9 @@ Use the **y-coordinates from the indicator** to calculate the range, entries, SL
 ## Test 1: Notice 
 | Topic&Flaws            | Details                                    | Status  |
 |---------------------|-------------------------------------------|-------------|
-| **Position sizing** | i think the bot doesn't position size condifering the P&L gains. For example: it bets 3% but not as the whole SL, hence the loss is greater than -3% and the gain is greater than 6% | unresolved |
+| **Position sizing** | i think the bot doesn't position size consdidering the P&L gains (look at the bars, its uneven). For example: it bets 3% but not as the whole SL, hence the loss is greater than -3% and the gain is greater than 6% | unresolved |
  |**R-multiple** | its appears that its possible to get 4R-multiple upon reviwing the trades| unresolved |
  |**winrate** | the winrate is 40-43% and its not that idieal|unresolved |
 
 This strategy is naturally profitable but i would like to increase the R-multiples and the winrate, ima run diferrent tests.
+
