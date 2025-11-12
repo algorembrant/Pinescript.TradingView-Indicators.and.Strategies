@@ -20,9 +20,18 @@ The indicators & strategies (pinescript) at TradingView is limited, it doesn't a
 
 # Indicator Lists
 
-| CODE             | Details                                    |
-|---------------------|-------------------------------------------|
-| **[89RS](./Pinescript%20Language/Indicators/89RS.Rangebreakout-Stoporder)** |The 8-9pm Rangebreakout Stoporder Method with 1:2RR ratio target. An Opening Range Break (ORB) reference.  |
+| CODE             | Details                                    | Status    |
+|---------------------|-------------------------------------------|-----------------|
+| **[89RS](./Pinescript%20Language/Indicators/89RS.Rangebreakout-Stoporder)** |The 8-9pm Rangebreakout Stoporder Method with 1:2RR ratio target. An Opening Range Break (ORB) reference. |  Ongoing |
 
 # Strategy Lists
 not updated yet
+| CODE             | Details                                    | Status    |
+|---------------------|-------------------------------------------|-----------------|
+|  none  |  none | none |
+
+# Technique Lists
+
+| CODE             | Details                                    | Status    |
+|---------------------|-------------------------------------------|-----------------|
+| **[30WE](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/tree/main/Pinescript%20Language/Techniques)** | The three 30minute candle wickyoff pattern as entry model to have tigher stoploss to increase the R-multiple| Finished | 
