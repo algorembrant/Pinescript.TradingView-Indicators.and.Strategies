@@ -20,20 +20,20 @@ The indicators & strategies (pinescript) at TradingView is limited, it doesn't a
 
 # Indicator Lists
 
-| CODE             | Info                                    | Status    | Details|
-|---------------------|-------------------------------------------|-----------------|--|
-| **[89RS-indi](./Pinescript%20Language/Indicators/89RS.Rangebreakout-Stoporder)** |The 8-9pm Rangebreakout Stoporder Method with 1:2RR ratio target. An Opening Range Break (ORB) reference. |  Ongoing | **[readme](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Pinescript%20Language/Indicators/89RS.Rangebreakout-Stoporder/89RS-indi.notice.md)** |
+| CODE | Info | Status | Details |
+|------|------|--------|---------|
+| **[89RS-indi](./Pinescript%20Language/Indicators/89RS.Rangebreakout-Stoporder)** | The 8-9pm Rangebreakout Stoporder Method with 1:2RR ratio target. An Opening Range Break (ORB) reference. | Ongoing | **[readme](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Pinescript%20Language/Indicators/89RS.Rangebreakout-Stoporder/89RS-indi.notice.md)** |
+
 
 # Strategy Lists
 
-| CODE             | Details                                    | Status    |
-|---------------------|-------------------------------------------|-----------------|
-| **[89RS-stra](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/tree/main/Pinescript%20Language/Strategies)** |Automated strategy trading bot for 89RS |  Ongoing | **[readme](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Pinescript%20Language/Indicators/89RS.Rangebreakout-Stoporder/89RS-indi.notice.md)** |
-| **[89RS-stra](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/tree/main/Pinescript%20Language/Strategies)** |Automated strategy trading bot for 89RS |  Ongoing | **[readme]()** |
+| CODE | Info | Status | Details |
+|------|------|--------|---------|
+| **[89RS-stra](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/tree/main/Pinescript%20Language/Strategies)** | Automated strategy trading bot for 89RS | Ongoing | **[readme](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Pinescript%20Language/Strategies/89RS-stra.%20Automated%20Trading/89RS-stra.notice.%20Automated%20strategy.md)** |  
 
 
 # Technique Lists
 
-| CODE             | Details                                    | Status    |
-|---------------------|-------------------------------------------|-----------------|
-| **[30WE](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/tree/main/Pinescript%20Language/Techniques)** | The three 30minute candle wickyoff pattern as entry model to have tigher stoploss to increase the R-multiple| Finished | 
+| CODE | Info | Status | Details |
+|------|------|--------|---------|
+| **[30WE](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/tree/main/Pinescript%20Language/Techniques)** | The three 30-minute candle wickyoff pattern as entry model to have tighter stoploss to increase the R-multiple | Finished | **[readme](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Pinescript%20Language/Techniques/330WEM.%20three-30minuteWickyoff.EntryModel/30%20minute%20wickyoff%20swingpoint%20entry%20model.md)** |
