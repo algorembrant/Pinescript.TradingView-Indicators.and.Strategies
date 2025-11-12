@@ -33,12 +33,16 @@ This framework defines the conditions for executing the trading strategy.
 
 Use the **y-coordinates from the indicator** to calculate the range, entries, SL, and TP targets.
 
-
 ![image](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Pinescript%20Language/Strategies/images/Screenshot%202025-11-12%20201257.png)
+
+---
 
 ## Test 1: Result
 
-![image](https://github.dev/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Pinescript%20Language/Strategies/89RS-stra.%20Automated%20Trading/89RS-stra.notice.%20Automated%20strategy.md)
+![image](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Pinescript%20Language/Strategies/images/Screenshot%202025-11-12%20205738.png)
+
+---
+
 ## Test 1: Notice 
 | Topic&Flaws            | Details                                    | Status  |
 |---------------------|-------------------------------------------|-------------|
@@ -46,3 +50,4 @@ Use the **y-coordinates from the indicator** to calculate the range, entries, SL
  |**R-multiple** | its appears that its possible to get 4R-multiple upon reviwing the trades| unresolved |
  |**winrate** | the winrate is 40-43% and its not that idieal|unresolved |
 
+This strategy is naturally profitable but i would like to increase the R-multiples and the winrate, ima run diferrent tests.
