@@ -54,3 +54,4 @@ Use the **y-coordinates from the indicator** to calculate the range, entries, SL
 ---
 
 This strategy is naturally profitable, but I aim to **increase the R-multiples and win rate** through additional testing.
+
