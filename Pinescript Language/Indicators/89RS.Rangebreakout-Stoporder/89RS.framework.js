@@ -81,9 +81,11 @@ if sessionClose and not na(sHigh)
     line.new(sEnd, buySL, sEnd + 5, buySL, color=color.new(color.orange, 0), width=2, style=line.style_dashed)
     line.new(sEnd, buyTP, sEnd + 5, buyTP, color=color.new(color.lime, 0), width=2, style=line.style_dotted)
 
-    label.new(sEnd + 5, buyStop, text=str.format("BUY STOP\n{0}", str.tostring(buyStop, format.mintick)), style=label.style_label_left, color=color.new(color.lime, 0), textcolor=color.white)
-    label.new(sEnd + 5, buySL, text=str.format("SL (MID)\n{0}", str.tostring(buySL, format.mintick)), style=label.style_label_left, color=color.new(color.orange, 0), textcolor=color.white)
-    label.new(sEnd + 5, buyTP, text=str.format("BUY TP\n{0}", str.tostring(buyTP, format.mintick)),style=label.style_label_left, color=color.new(color.lime, 0), textcolor=color.white)
+    label.new(sEnd + 5, buyStop,text=str.format("BUY STOP\n{0}", str.tostring(buyStop, format.mintick)),style=label.style_label_left, color=color.new(color.lime, 0), textcolor=color.white, size=size.tiny)
+
+    label.new(sEnd + 5, buySL,text=str.format("SL (MID)\n{0}", str.tostring(buySL, format.mintick)), style=label.style_label_left, color=color.new(color.orange, 0), textcolor=color.white, size=size.tiny)
+
+    label.new(sEnd + 5, buyTP,text=str.format("BUY TP\n{0}", str.tostring(buyTP, format.mintick)),style=label.style_label_left, color=color.new(color.lime, 0), textcolor=color.white, size=size.tiny)
 
     //──────────────────────────────
     // DRAW SELL SETUP
@@ -92,9 +94,11 @@ if sessionClose and not na(sHigh)
     line.new(sEnd, sellSL, sEnd + 5, sellSL, color=color.new(color.orange, 0), width=2, style=line.style_dashed)
     line.new(sEnd, sellTP, sEnd + 5, sellTP, color=color.new(color.red, 0), width=2, style=line.style_dotted)
 
-    label.new(sEnd + 5, sellStop, text=str.format("SELL STOP\n{0}", str.tostring(sellStop, format.mintick)),style=label.style_label_left, color=color.new(color.red, 0), textcolor=color.white)
-    label.new(sEnd + 5, sellSL, text=str.format("SL (MID)\n{0}", str.tostring(sellSL, format.mintick)), style=label.style_label_left, color=color.new(color.orange, 0), textcolor=color.white)
-    label.new(sEnd + 5, sellTP, text=str.format("SELL TP\n{0}", str.tostring(sellTP, format.mintick)),style=label.style_label_left, color=color.new(color.red, 0), textcolor=color.white)
+    label.new(sEnd + 5, sellStop, text=str.format("SELL STOP\n{0}", str.tostring(sellStop, format.mintick)), style=label.style_label_left, color=color.new(color.red, 0), textcolor=color.white, size=size.tiny)
+
+    label.new(sEnd + 5, sellSL,text=str.format("SL (MID)\n{0}", str.tostring(sellSL, format.mintick)), style=label.style_label_left, color=color.new(color.orange, 0), textcolor=color.white, size=size.tiny)
+
+    label.new(sEnd + 5, sellTP,  text=str.format("SELL TP\n{0}", str.tostring(sellTP, format.mintick)), style=label.style_label_left, color=color.new(color.red, 0),textcolor=color.white, size=size.tiny)
 
 //──────────────────────────────
 // 4:00 AM CANDLE HIGHLIGHT
@@ -104,5 +108,5 @@ var box box4am = na
 if is4am
     if not na(box4am)
         box.delete(box4am)
-    box4am := box.new(left = bar_index,right = bar_index + 1, top = high, bottom = low, bgcolor = color.new(color.new(color.blue, 75), 0), border_color = color.new(color.blue, 0))
-    label.new(bar_index, high, "4 AM", style=label.style_label_down, color=color.new(color.blue, 0), textcolor=color.white)
+    box4am := box.new( left = bar_index, right = bar_index + 1, top = high,  bottom = low,  bgcolor = color.new(color.blue, 75), border_color = color.new(color.blue, 0))
+    label.new(bar_index, high, "4 AM", style=label.style_label_down, color=color.new(color.blue, 0),textcolor=color.white,size=size.tiny)
