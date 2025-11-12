@@ -33,22 +33,24 @@ This framework defines the conditions for executing the trading strategy.
 
 Use the **y-coordinates from the indicator** to calculate the range, entries, SL, and TP targets.
 
-![image](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Pinescript%20Language/Strategies/images/Screenshot%202025-11-12%20201257.png)
+![Strategy Example](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Pinescript%20Language/Strategies/images/Screenshot%202025-11-12%20201257.png)
 
 ---
 
 ## Test 1: Result
 
-![image](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Pinescript%20Language/Strategies/images/Screenshot%202025-11-12%20205738.png)
+![Test 1 Result](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Pinescript%20Language/Strategies/images/Screenshot%202025-11-12%20205738.png)
 
 ---
 
 ## Test 1: Notice 
-| Topic&Flaws            | Details                                    | Status  |
-|---------------------|-------------------------------------------|-------------|
-| **Position sizing** | i think the bot doesn't position size consdidering the P&L gains (look at the bars, its uneven). For example: it bets 3% but not as the whole SL, hence the loss is greater than -3% and the gain is greater than 6% | unresolved |
- |**R-multiple** | its appears that its possible to get 4R-multiple upon reviwing the trades| unresolved |
- |**winrate** | the winrate is 40-43% and its not that idieal|unresolved |
 
-This strategy is naturally profitable but i would like to increase the R-multiples and the winrate, ima run diferrent tests.
+| Topic / Flaws       | Details                                                                                                             | Status       |
+|--------------------|---------------------------------------------------------------------------------------------------------------------|-------------|
+| **Position sizing** | The bot does not fully account for P&L when sizing positions. For example, it risks 3% per trade, but the loss can exceed this and gains may exceed 6%. | Unresolved  |
+| **R-multiple**      | Trades indicate the possibility of reaching a 4R multiple upon review.                                             | Unresolved  |
+| **Win rate**        | The current win rate is 40–43%, which is lower than ideal.                                                          | Unresolved  |
 
+---
+
+This strategy is naturally profitable, but I aim to **increase the R-multiples and win rate** through additional testing.
