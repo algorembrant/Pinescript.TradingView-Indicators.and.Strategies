@@ -1,22 +1,27 @@
-# Pinescript ≠ Javascript 
-I will be using ".js" (JavaScript) in naming a file/s only for aesthetic-look of the code and has nothing to do with the function. 
+## Pine Script ≠ JavaScript
 
-**Why?** 
+Files are named with a **`.js`** extension purely for aesthetics. This **does not affect functionality**.
 
-GitHub doesn't support Pinescript (a language for making trading indicators and automated strategies). However, the nearest language simillar to pinescript is javascript. That way the system will count it as element language for statistics (% about how often a language is used inside the repository). 
+## Why?
 
-Altho it doesn't suport pinescript function, there's a package for the colored syntax in VS. The output (visualization indicators and strategies) doesn't show up unless we paste the pinescript code on it's intended IDE, which is the PineEditor in the TradingView platform.  
-
-
-**How to use the code?**
-
-There's 2 significat files for every project. First is the "CODE_**notice**.file", I highly suggest reading this in the begining cuz this is where the *detailes and feature* of the project is all about. Second is the "CODE_**framework**.file", I highly suggest focusing on this oneshot pinescript code cuz this is meant to be pasted on PineEditor in the TradingView platform.
+GitHub doesn’t support Pine Script, the language for TradingView indicators and strategies. Using `.js` allows GitHub to recognize a language for repository stats. Syntax highlighting is available via VS Code packages, but the code **only works when pasted into TradingView’s Pine Editor**.
 
 
-**What is the other significant files?**
+## How to use the code
 
-The indicators & strategies (pinescript) at TradingView is limited, it doesn't automate trades. Hence, a Phython code is preffered to use for automation. These pinescript code is translalted and optimized to match the desired strategy and be able to automate the trades and operates inside a broker. Trading using a bot, no human interaction/decision making, no looking at the chart, no emotion, just automated trader.
+Each project has two main files:
 
+1. **`CODE_notice.file`** – Contains full project details and features. Read this first.  
+2. **`CODE_framework.file`** – The Pine Script code to paste into Pine Editor. Focus on this file for implementation.
+
+
+## Other significant files
+
+Pine Script cannot automate trades inside a broker. For automation, the Pine Script logic is translated into **Python**, optimized for fully automated trading with a broker.
+
+The bot trades **without human interaction**—no chart watching, no emotions, just automated execution.
+
+---
 
 # Indicator Lists
 
