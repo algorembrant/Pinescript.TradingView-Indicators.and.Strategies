@@ -20,15 +20,16 @@ The indicators & strategies (pinescript) at TradingView is limited, it doesn't a
 
 # Indicator Lists
 
-| CODE             | Details                                    | Status    |
-|---------------------|-------------------------------------------|-----------------|
-| **[89RS-indi](./Pinescript%20Language/Indicators/89RS.Rangebreakout-Stoporder)** |The 8-9pm Rangebreakout Stoporder Method with 1:2RR ratio target. An Opening Range Break (ORB) reference. |  Ongoing |
+| CODE             | Info                                    | Status    | Details|
+|---------------------|-------------------------------------------|-----------------|--|
+| **[89RS-indi](./Pinescript%20Language/Indicators/89RS.Rangebreakout-Stoporder)** |The 8-9pm Rangebreakout Stoporder Method with 1:2RR ratio target. An Opening Range Break (ORB) reference. |  Ongoing | **[readme](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Pinescript%20Language/Indicators/89RS.Rangebreakout-Stoporder/89RS-indi.notice.md)** |
 
 # Strategy Lists
-not updated yet
+
 | CODE             | Details                                    | Status    |
 |---------------------|-------------------------------------------|-----------------|
-| **[89RS-stra](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/tree/main/Pinescript%20Language/Strategies)** |Automated strategy trading bot for 89RS |  Ongoing |
+| **[89RS-stra](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/tree/main/Pinescript%20Language/Strategies)** |Automated strategy trading bot for 89RS |  Ongoing | **[readme](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Pinescript%20Language/Indicators/89RS.Rangebreakout-Stoporder/89RS-indi.notice.md)** |
+| **[89RS-stra](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/tree/main/Pinescript%20Language/Strategies)** |Automated strategy trading bot for 89RS |  Ongoing | **[readme]()** |
 
 
 # Technique Lists
