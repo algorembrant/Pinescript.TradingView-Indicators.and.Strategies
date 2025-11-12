@@ -1,5 +1,5 @@
 //@version=5
-indicator("8PM–9PM Range Strategy (Midpoint as SL)", overlay=true, max_lines_count=500, max_labels_count=500, max_boxes_count=200)
+indicator("8PM–9PM Range Strategy (Midpoint as SL) + 4AM Candle", overlay=true, max_lines_count=500, max_labels_count=500, max_boxes_count=200)
 
 //──────────────────────────────
 // SETTINGS
@@ -44,7 +44,13 @@ if sessionClose and not na(sHigh)
     //──────────────────────────────
     if not na(sBox)
         box.delete(sBox)
-    sBox := box.new( left = sStart, right = sEnd, top = sHigh,  bottom = sLow, bgcolor = color.new(color.yellow, 85), border_color = color.new(color.yellow, 0))
+    sBox := box.new(
+         left = sStart,
+         right = sEnd,
+         top = sHigh,
+         bottom = sLow,
+         bgcolor = color.new(#000000, 85),
+         border_color = color.new(#000000, 0))
 
     //──────────────────────────────
     // CORE LEVELS
@@ -58,7 +64,7 @@ if sessionClose and not na(sHigh)
 
     // SELL setup (mirror)
     sellStop = sLow
-    sellSL   = mid  // same midpoint as SL
+    sellSL   = mid
     sellTP   = sLow - (math.abs(mid - sLow) * 2)
 
     //──────────────────────────────
@@ -89,3 +95,14 @@ if sessionClose and not na(sHigh)
     label.new(sEnd + 5, sellStop, text=str.format("SELL STOP\n{0}", str.tostring(sellStop, format.mintick)),style=label.style_label_left, color=color.new(color.red, 0), textcolor=color.white)
     label.new(sEnd + 5, sellSL, text=str.format("SL (MID)\n{0}", str.tostring(sellSL, format.mintick)), style=label.style_label_left, color=color.new(color.orange, 0), textcolor=color.white)
     label.new(sEnd + 5, sellTP, text=str.format("SELL TP\n{0}", str.tostring(sellTP, format.mintick)),style=label.style_label_left, color=color.new(color.red, 0), textcolor=color.white)
+
+//──────────────────────────────
+// 4:00 AM CANDLE HIGHLIGHT
+//──────────────────────────────
+is4am = barHour == 4 and barMin == 0
+var box box4am = na
+if is4am
+    if not na(box4am)
+        box.delete(box4am)
+    box4am := box.new(left = bar_index,right = bar_index + 1, top = high, bottom = low, bgcolor = color.new(color.new(color.blue, 75), 0), border_color = color.new(color.blue, 0))
+    label.new(bar_index, high, "4 AM", style=label.style_label_down, color=color.new(color.blue, 0), textcolor=color.white)
