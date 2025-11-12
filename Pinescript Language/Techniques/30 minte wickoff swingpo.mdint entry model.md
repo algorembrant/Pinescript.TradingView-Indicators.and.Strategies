@@ -20,5 +20,16 @@ Then the this  entry model comes into play.
 ![XAU](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Pinescript%20Language/Techniques/XAUUSDc_2025-11-12_10-02-56.png)
 
 #  In Depth Charting
+
 ![XAU](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Pinescript%20Language/Techniques/Images/Screenshot%202025-11-12%20102519.png)
+
+#  Recall
+Major Key Anchoring at HVN
+Confirmation  Trendline breakout
+Confirmation  Markket structure shift
+Entry model  three-30minute-candle wickyoff pattern
+SL    at the previous 30minute wick from the maximum high
+TP    at the LVN from the recent displacement at 30minute timeframe.
+
+![XAU](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Pinescript%20Language/Techniques/Images/Screenshot%202025-11-12%20105920.png)
 
