@@ -22,13 +22,14 @@ The indicators & strategies (pinescript) at TradingView is limited, it doesn't a
 
 | CODE             | Details                                    | Status    |
 |---------------------|-------------------------------------------|-----------------|
-| **[89RS](./Pinescript%20Language/Indicators/89RS.Rangebreakout-Stoporder)** |The 8-9pm Rangebreakout Stoporder Method with 1:2RR ratio target. An Opening Range Break (ORB) reference. |  Ongoing |
+| **[89RS-indi](./Pinescript%20Language/Indicators/89RS.Rangebreakout-Stoporder)** |The 8-9pm Rangebreakout Stoporder Method with 1:2RR ratio target. An Opening Range Break (ORB) reference. |  Ongoing |
 
 # Strategy Lists
 not updated yet
 | CODE             | Details                                    | Status    |
 |---------------------|-------------------------------------------|-----------------|
-|  none  |  none | none |
+| **[89RS-stra](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/Pinescript_Language/Strategies/89RS-stra._Automated_Trading)** |Automated strategy trading bot for 89RS |  Ongoing |
+
 
 # Technique Lists
 
