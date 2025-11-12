@@ -1,7 +1,10 @@
-wewqqeqwe
-Ticker: forexgold, XAUUSD
-Timeframe: 30minutes
-Type: entry model for counter and reversal setups
+# About
+
+|     What it is       | Details                                    |
+|---------------------|-------------------------------------------|
+| **Ticker** | forexgold, XAUUSD                                    |
+| **Timeframe** | 30minutes                                    |
+| **Discussion Type** | entry model for counter and reversal setups                                   |
 
 #  Detail
 This method is how to minimize the SL size to have a greater R-multiple. Using a *three-30minute-candle pattern*, we could easily find the wickoff entry model. look at the 2 white vertical lines. 
@@ -24,12 +27,16 @@ Then the this  entry model comes into play.
 ![XAU](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Pinescript%20Language/Techniques/Images/Screenshot%202025-11-12%20102519.png)
 
 #  Recall
-Major Key Anchoring at HVN
-Confirmation  Trendline breakout
-Confirmation  Markket structure shift
-Entry model  three-30minute-candle wickyoff pattern
-SL    at the previous 30minute wick from the maximum high
-TP    at the LVN from the recent displacement at 30minute timeframe.
+
+|     What it is       | Details                                    |
+|---------------------|-------------------------------------------|
+| **Major Key** | anchoring at HVN                                    |
+| **Confirmation** | trendline breakout                                    |
+| **Confirmation** | comprehensible markket structure shift                                   |
+| **Entry model** | three-30minute-candle wickyoff pattern                                     |
+| **Safety** | entering at recently made volume cluster at the highs                                    |
+| **SL** |  at the previous 30minute wick from the maximum high                                     |
+| **TP** | at the LVN from the recent displacement at 30minute timeframe                                     |
 
 ![XAU](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Pinescript%20Language/Techniques/Images/Screenshot%202025-11-12%20105920.png)
 
