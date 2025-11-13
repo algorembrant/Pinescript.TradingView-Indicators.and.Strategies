@@ -3,6 +3,8 @@
 **Setup Overview:**  
 This framework defines the conditions for executing the trading strategy.
 
+![Template](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Pinescript%20Language/Strategies/images/pasted-image.png)
+
 ---
 
 ## Rules
