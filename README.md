@@ -13,6 +13,7 @@ Each project has two main files:
 
 1. **`CODE_notice.file`** – Contains full project details and features. Read this first.  
 2. **`CODE_framework.file`** – The Pine Script code to paste into Pine Editor. Focus on this file for implementation.
+3. **`CODE_bot.file`** – The Python code for automated trading bot, no manual trader labor inside a broker.
 
 
 ## Other significant files
