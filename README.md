@@ -43,3 +43,9 @@ The bot trades **without human interaction**—no chart watching, no emotions, j
 | CODE | Info | Status | Details |
 |------|------|--------|---------|
 | **[30WE](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/tree/main/Pinescript%20Language/Techniques)** | The three 30-minute candle wickyoff pattern as entry model to have tighter stoploss to increase the R-multiple | Finished | **[readme](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Pinescript%20Language/Techniques/330WEM.%20three-30minuteWickyoff.EntryModel/30%20minute%20wickyoff%20swingpoint%20entry%20model.md)** |
+
+## Concepts Lists
+
+| CODE | Info | Status | Details |
+|------|------|--------|---------|
+| **[LLN](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Concepts%20and%20Topics/The%20Law%20of%20Large%20Numbers%20(LLN).ipynb)** | The Law of Large Numbers | Finished |  |
