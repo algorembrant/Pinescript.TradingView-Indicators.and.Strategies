@@ -1,3 +1,8 @@
+##  Flow
+
+![img](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Images/pasted-image.png)
+
+
 <h1 align="center">About</h1>
 
 | Property             | Details                                    |
