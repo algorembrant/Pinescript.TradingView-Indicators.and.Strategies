@@ -26,7 +26,7 @@ Pine Script isn’t like JavaScript because it is a **domain-specific language**
 GitHub doesn’t support Pine Script, the language for TradingView indicators and strategies. However it's still good for documentation. Syntax highlighting is available via VS Code packages, but the code **only works when pasted into TradingView’s Pine Editor Compiler**.
 
 
-## How to use the code
+## How to view
 
 Each project is documented.
 
