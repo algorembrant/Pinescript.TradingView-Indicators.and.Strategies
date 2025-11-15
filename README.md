@@ -2,6 +2,7 @@
 
 Pine Script isn’t like JavaScript because it is a **domain-specific language** designed specifically for **financial charting and trading strategies** on TradingView. Unlike JavaScript, which is a general-purpose language for web development and can manipulate any type of data or interface, Pine Script focuses on **time series data**, **candlestick patterns**, **indicators**, and **strategy execution**.
 
+##  Pinescript versus Python
 | Feature/Aspect                | Pine Script                                                                                       | Python                                                                                                      |
 | ----------------------------- | ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | **Description**               | Domain-specific language for creating **trading indicators and strategies** on TradingView.       | General-purpose programming language used for **web development, data analysis, AI, automation**, and more. |
