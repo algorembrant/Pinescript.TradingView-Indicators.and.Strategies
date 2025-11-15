@@ -38,7 +38,8 @@ Each project is documented.
 
 | CODE | Info | Status | Details |
 |------|------|--------|---------|
-| **[89rs](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Trading%20Indicators%2C%20Strategies%20%26%20Techniques/89RM%2089Rangebreakout%20Model.ipynb)** | The 8-9pm Rangebreakout Stoporder Method with 1:2RR ratio target. An Opening Range Break (ORB) reference. | Ongoing |  |
+| **[SCT25](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Trading%20Indicators%2C%20Strategies%20%26%20Techniques/SCT%20Sunstoic's%20Charting%20Tool.ipynb)**| Sunstoic's Charting Tool 2025 | Finished | includes indicator |
+| **[89RS](https://github.com/algorembrant/Pinescript.TradingView-Indicators.and.Strategies/blob/main/Trading%20Indicators%2C%20Strategies%20%26%20Techniques/89RM%2089Rangebreakout%20Model.ipynb)** | The 8-9pm Rangebreakout Stoporder Method. An Opening Range Break (ORB) reference. | Ongoing | includes indicator and strategy  |
 
 ## Concepts Lists
 
