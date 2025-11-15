@@ -2,16 +2,22 @@
 
 Pine Script isn’t like JavaScript because it is a **domain-specific language** designed specifically for **financial charting and trading strategies** on TradingView. Unlike JavaScript, which is a general-purpose language for web development and can manipulate any type of data or interface, Pine Script focuses on **time series data**, **candlestick patterns**, **indicators**, and **strategy execution**.
 
-##  Pinescript versus Python
-| Feature/Aspect      | Pine Script                                                                                          | Python                                                                                                     |
-| ------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| **Description**     | Domain-specific language for creating **trading indicators and strategies** on TradingView.          | General-purpose programming language used for **web, data analysis, AI, automation**, and more.            |
-| **Primary Use**     | Financial charting, indicators, alerts, backtesting strategies.                                      | Wide range: data analysis, AI/ML, web development, automation, scripting, finance, etc.                    |
-| **Execution Model** | Runs **bar by bar** on time series data; series variables track historical values automatically.     | Procedural or object-oriented execution; runs line by line; manual handling of time series required.       |
-| **Similarities**    | Both support **functions, variables, loops** (limited in Pine Script), and can perform calculations. |                                                                                                            |
-| **Capabilities**    | Specialized plotting, alerts, and strategy execution; handles financial series data efficiently.     | Full programming capabilities including file I/O, networking, libraries (e.g., NumPy, Pandas, Matplotlib). |
-| **Limitations**     | Cannot access system files, web APIs, or external libraries; limited to TradingView environment.     | Requires libraries for charting and finance; no built-in trading platform integration.                     |
-| **Learning Curve**  | Easier for traders due to focused domain, fewer syntax rules.                                        | Steeper learning curve but more versatile; extensive resources and community support.                      |
+| Feature/Aspect                | Pine Script                                                                                       | Python                                                                                                      |
+| ----------------------------- | ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| **Description**               | Domain-specific language for creating **trading indicators and strategies** on TradingView.       | General-purpose programming language used for **web development, data analysis, AI, automation**, and more. |
+| **Primary Use**               | Financial charting, indicators, alerts, backtesting strategies.                                   | Wide range: data analysis, AI/ML, web development, automation, finance, etc.                                |
+| **Execution Model**           | Runs **bar by bar** on time series data; series variables track historical values automatically.  | Procedural, object-oriented, or functional execution; manual handling of time series required.              |
+| **Data Handling**             | Built-in support for price series, OHLC data, and indicators.                                     | Requires libraries like Pandas or NumPy for structured data and time series.                                |
+| **Plotting & Visualization**  | Limited to chart overlays, indicators, and shapes on TradingView.                                 | Full-featured plotting with libraries like Matplotlib, Plotly, Seaborn.                                     |
+| **External Integration**      | No direct access to files, APIs, or databases; restricted to TradingView.                         | Can integrate with databases, web APIs, files, cloud services, and more.                                    |
+| **Libraries & Extensibility** | Cannot import external libraries; only built-in Pine functions.                                   | Vast ecosystem of libraries for almost any task.                                                            |
+| **Backtesting & Strategy**    | Native support for strategy testing, alerts, and position sizing.                                 | Requires manual coding or external frameworks for backtesting and trading simulations.                      |
+| **Variables & State**         | Series variables automatically track historical values; supports mutable and immutable variables. | Variables are mutable; history tracking must be implemented manually.                                       |
+| **Loops & Control Flow**      | Limited support for loops; vectorized operations preferred.                                       | Full support for loops, recursion, comprehensions, and control structures.                                  |
+| **Learning Curve**            | Easier for traders due to focused domain and simple syntax.                                       | Steeper learning curve but highly versatile; large community support.                                       |
+| **Performance**               | Optimized for chart calculations; efficient for time series.                                      | Performance depends on implementation and libraries; may require optimization for large datasets.           |
+| **Limitations**               | Restricted to TradingView platform; cannot perform general computing tasks.                       | Not inherently designed for trading platforms; requires additional coding for finance-specific tasks.       |
+
 
 
 ##  Fact
