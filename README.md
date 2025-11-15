@@ -1,26 +1,29 @@
 ## Pine Script ≠ JavaScript
 
-Files are named with a **`.js`** extension purely for aesthetics. This **does not affect functionality**.
+Pine Script isn’t like JavaScript because it is a **domain-specific language** designed specifically for **financial charting and trading strategies** on TradingView. Unlike JavaScript, which is a general-purpose language for web development and can manipulate any type of data or interface, Pine Script focuses on **time series data**, **candlestick patterns**, **indicators**, and **strategy execution**.
 
-## Why?
+##  Pinescript versus Python
+| Feature/Aspect      | Pine Script                                                                                          | Python                                                                                                     |
+| ------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| **Description**     | Domain-specific language for creating **trading indicators and strategies** on TradingView.          | General-purpose programming language used for **web, data analysis, AI, automation**, and more.            |
+| **Primary Use**     | Financial charting, indicators, alerts, backtesting strategies.                                      | Wide range: data analysis, AI/ML, web development, automation, scripting, finance, etc.                    |
+| **Execution Model** | Runs **bar by bar** on time series data; series variables track historical values automatically.     | Procedural or object-oriented execution; runs line by line; manual handling of time series required.       |
+| **Similarities**    | Both support **functions, variables, loops** (limited in Pine Script), and can perform calculations. |                                                                                                            |
+| **Capabilities**    | Specialized plotting, alerts, and strategy execution; handles financial series data efficiently.     | Full programming capabilities including file I/O, networking, libraries (e.g., NumPy, Pandas, Matplotlib). |
+| **Limitations**     | Cannot access system files, web APIs, or external libraries; limited to TradingView environment.     | Requires libraries for charting and finance; no built-in trading platform integration.                     |
+| **Learning Curve**  | Easier for traders due to focused domain, fewer syntax rules.                                        | Steeper learning curve but more versatile; extensive resources and community support.                      |
 
-GitHub doesn’t support Pine Script, the language for TradingView indicators and strategies. Using `.js` allows GitHub to recognize a language for repository stats. Syntax highlighting is available via VS Code packages, but the code **only works when pasted into TradingView’s Pine Editor Compiler**.
+
+##  Fact
+
+GitHub doesn’t support Pine Script, the language for TradingView indicators and strategies. However it's still good for documentation. Syntax highlighting is available via VS Code packages, but the code **only works when pasted into TradingView’s Pine Editor Compiler**.
 
 
 ## How to use the code
 
-Each project has two main files:
+Each project is documented.
 
-1. **`CODE_notice.file`** – Contains full project details and features. Read this first.  
-2. **`CODE_framework.file`** – The Pine Script code to paste into Pine Editor. Focus on this file for implementation.
-3. **`CODE_bot.file`** – The Python code for automated trading bot, no manual trader labor inside a broker.
-
-
-## Other significant files
-
-Pine Script cannot automate trades inside a broker. For automation, the Pine Script logic is translated into **Python**, optimized for fully automated trading with a broker.
-
-The bot trades **without human interaction**—no chart watching, no emotions, just automated execution.
+1. **`CODE.ipynb`** – Contains full project logic, details and features inside a jupyter notebook.  
 
 ---
 
